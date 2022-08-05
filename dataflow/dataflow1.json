@@ -36,7 +36,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive(CreatedBy = SudhakarCode) ~> derivedColumn1",
+				"source1 derive(CreatedBy = currentDate()) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
