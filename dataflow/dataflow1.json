@@ -11,7 +11,11 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "flowlet1"
+					"name": "flowlet1",
+					"flowlet": {
+						"referenceName": "flowlet1",
+						"type": "DataFlowReference"
+					}
 				},
 				{
 					"name": "union1"
@@ -20,8 +24,12 @@
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false) ~> source1",
-				"source1 compose(composition: 'undefined') ~> flowlet1@()",
-				"source1, flowlet1 union(byName: false)~> union1"
+				"source1 compose(mapColumn(",
+				"          Id = {},",
+				"          Name = {}",
+				"     ),",
+				"     composition: 'flowlet1') ~> flowlet1@(temporary)",
+				"source1, flowlet1@temporary union(byName: false)~> union1"
 			]
 		}
 	}
