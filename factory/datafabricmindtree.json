@@ -1,0 +1,9 @@
+{
+	"name": "datafabricmindtree",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c29c37c7-8102-4b65-99cd-5c911a0ca8df",
+		"tenantId": "85c997b9-f494-46b3-a11d-772983cf6f11"
+	}
+}
